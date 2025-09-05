@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <span class="app-title" (click)="navigateToDashboard()" role="button" tabindex="0" 
+        (keydown.enter)="navigateToDashboard()" (keydown.space)="navigateToDashboard()">
+    Banking Application
+  </span>
+  <span class="spacer"></span>
+  <div *ngIf="authService.isAuthenticated()" class="user-section">
+    <a routerLink="/feedback" class="feedback-link">Submit Feedback</a>
+    <span class="logout-message">Logout</span>
+    <button mat-icon-button (click)="logout()" aria-label="Logout" class="logout-btn">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

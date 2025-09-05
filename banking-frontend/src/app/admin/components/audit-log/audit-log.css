@@ -1,0 +1,20 @@
+.audit-log-container {
+  padding: 2rem;
+}
+
+table {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.error-message {
+  color: red;
+  margin: 1rem 0;
+}

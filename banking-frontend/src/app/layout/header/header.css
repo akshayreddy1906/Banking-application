@@ -1,0 +1,57 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.app-title {
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.app-title:hover {
+  color: #e3f2fd;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feedback-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.feedback-link:hover {
+  color: #e3f2fd;
+  text-decoration: underline;
+}
+
+.logout-message {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+}
+
+.logout-btn {
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .logout-message {
+    display: none;
+  }
+  
+  .user-section {
+    gap: 8px;
+  }
+}
+

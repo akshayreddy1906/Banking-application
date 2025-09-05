@@ -1,0 +1,29 @@
+.edit-customer-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+mat-card {
+  width: 600px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  margin-right: 1rem;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 1rem;
+}

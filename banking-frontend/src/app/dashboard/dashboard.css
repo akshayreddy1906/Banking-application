@@ -1,0 +1,55 @@
+.dashboard-container {
+  padding: 2rem;
+}
+
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.dashboard-card {
+  width: 300px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background-color: #922638;
+  color: white;
+  border-radius: 8px;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.dashboard-card mat-card-header {
+  background-color: #922638;
+  color: white;
+}
+
+.dashboard-card mat-card-title {
+  color: white;
+  font-weight: 600;
+}
+
+.dashboard-card mat-card-content {
+  background-color: #922638;
+  color: white;
+}
+
+.dashboard-card mat-card-content p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.admin-section {
+  margin-top: 3rem;
+  border-top: 1px solid #ccc;
+  padding-top: 2rem;
+}
+
+.admin-section h2 {
+  color: #103766;
+  margin-bottom: 1rem;
+}

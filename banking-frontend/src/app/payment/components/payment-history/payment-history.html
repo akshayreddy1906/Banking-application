@@ -1,0 +1,71 @@
+<div class="payment-history-container">
+  <h1>Payment History</h1>
+  <h6>Enter your account number for cross account payments</h6>
+  <form [formGroup]="searchForm" (ngSubmit)="searchHistory()" class="search-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Account Number</mat-label>
+      <input matInput formControlName="accountNumber" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="searchForm.invalid">
+      Search History
+    </button>
+  </form>
+
+  <div *ngIf="isLoading" class="spinner-container">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <table
+    mat-table
+    [dataSource]="payments"
+    class="mat-elevation-z8"
+    *ngIf="!isLoading && payments.length > 0"
+  >
+    <!-- Payment ID Column -->
+    <ng-container matColumnDef="paymentId">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let pmt">{{ pmt.paymentId }}</td>
+    </ng-container>
+
+    <!-- Sender Column -->
+    <ng-container matColumnDef="senderAccountNumber">
+      <th mat-header-cell *matHeaderCellDef>From</th>
+      <td mat-cell *matCellDef="let pmt">{{ pmt.senderAccountNumber }}</td>
+    </ng-container>
+
+    <!-- Receiver Column -->
+    <ng-container matColumnDef="receiverAccountNumber">
+      <th mat-header-cell *matHeaderCellDef>To</th>
+      <td mat-cell *matCellDef="let pmt">{{ pmt.receiverAccountNumber }}</td>
+    </ng-container>
+
+    <!-- Amount Column -->
+    <ng-container matColumnDef="amount">
+      <th mat-header-cell *matHeaderCellDef>Amount</th>
+      <td mat-cell *matCellDef="let pmt">{{ pmt.amount | currency : 'INR' }}</td>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let pmt">{{ pmt.status }}</td>
+    </ng-container>
+
+    <!-- Timestamp Column -->
+    <ng-container matColumnDef="timestamp">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let pmt">{{ pmt.timestamp | date : 'short' }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <div *ngIf="!isLoading && searched && payments.length === 0">
+    <p>No payment history found for this account.</p>
+  </div>
+</div>

@@ -1,0 +1,134 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* Global Styles */
+:root {
+  --primary-color: #103766;
+  --accent-color: #922638;
+  --warn-color: #f44336;
+  --primary-color-light: #4a6b8a;
+  --primary-color-lighter: #11396A;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  background-color: #f4f7f6;
+}
+
+.main-content {
+  padding: 20px;
+  min-height: calc(100vh - 128px);
+  margin-bottom: 64px;
+  /* Space for fixed footer */
+}
+
+/* Card Styling */
+.mat-mdc-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.mat-mdc-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Table Header Styling - Enhanced for better readability */
+.mat-mdc-table .mat-mdc-header-cell {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 12px 16px;
+  border: none;
+}
+
+/* Additional table header styling for all table types */
+table th,
+.mat-mdc-table th,
+.mat-table th {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  font-weight: bold;
+  padding: 12px 16px;
+  border: none;
+}
+
+/* Ensure table headers are always visible */
+.mat-mdc-table .mat-mdc-header-row {
+  background-color: var(--primary-color) !important;
+}
+
+.mat-mdc-table .mat-mdc-header-cell,
+.mat-mdc-table .mat-mdc-header-cell * {
+  color: white !important;
+}
+
+.mat-mdc-raised-button.mat-primary,
+.mat-mdc-unelevated-button.mat-primary,
+.mat-mdc-flat-button.mat-primary,
+.mat-mdc-stroked-button.mat-primary {
+  --mdc-protected-button-container-color: var(--primary-color) !important;
+  --mdc-protected-button-label-text-color: white !important;
+  --mdc-filled-button-container-color: var(--primary-color) !important;
+  --mdc-filled-button-label-text-color: white !important;
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+/* Legacy Material Design Classes (fallback) */
+.mat-raised-button.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-stroked-button.mat-primary {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+/* Accent Button Styling */
+.mat-mdc-raised-button.mat-accent,
+.mat-mdc-unelevated-button.mat-accent,
+.mat-mdc-flat-button.mat-accent,
+.mat-mdc-stroked-button.mat-accent {
+  --mdc-protected-button-container-color: var(--accent-color) !important;
+  --mdc-protected-button-label-text-color: white !important;
+  --mdc-filled-button-container-color: var(--accent-color) !important;
+  --mdc-filled-button-label-text-color: white !important;
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+/* Disabled Button Styling - Updated */
+.mat-mdc-button-disabled,
+.mat-mdc-raised-button.mat-mdc-button-disabled,
+.mat-mdc-unelevated-button.mat-mdc-button-disabled,
+.mat-mdc-flat-button.mat-mdc-button-disabled,
+.mat-mdc-stroked-button.mat-mdc-button-disabled,
+.mat-raised-button[disabled],
+.mat-flat-button[disabled] {
+  background-color: var(--primary-color) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  --mdc-protected-button-container-color: var(--primary-color) !important;
+  --mdc-protected-button-label-text-color: rgba(255, 255, 255, 0.7) !important;
+  --mdc-filled-button-container-color: var(--primary-color) !important;
+  --mdc-filled-button-label-text-color: rgba(255, 255, 255, 0.7) !important;
+  opacity: 0.8 !important;
+}
+
+/* Header and Footer Styling */
+.mat-toolbar.mat-primary {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+/* Snackbar Styling */
+.success-snackbar {
+  background-color: #4caf50;
+  color: white;
+}
+
+.error-snackbar {
+  background-color: #f44336;
+  color: white;
+}

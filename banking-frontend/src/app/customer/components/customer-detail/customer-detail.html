@@ -1,0 +1,31 @@
+<div class="customer-detail-container">
+  <div *ngIf="isLoading" class="spinner-container">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <mat-card *ngIf="customer && !isLoading">
+    <mat-card-header>
+      <mat-card-title>{{ customer.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item><strong>ID:</strong> {{ customer.contactId }}</mat-list-item>
+        <mat-list-item><strong>Email:</strong> {{ customer.email }}</mat-list-item>
+        <mat-list-item><strong>Mobile:</strong> {{ customer.mobileNumber }}</mat-list-item>
+        <mat-list-item><strong>Address:</strong> {{ customer.address }}</mat-list-item>
+        <mat-list-item><strong>Age:</strong> {{ customer.age }}</mat-list-item>
+        <mat-list-item><strong>Gender:</strong> {{ customer.gender }}</mat-list-item>
+        <mat-list-item><strong>PAN:</strong> {{ customer.panCardNumber }}</mat-list-item>
+        <mat-list-item><strong>Aadhaar:</strong> {{ customer.aadhaarCardNumber }}</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="editCustomer()">Edit</button>
+      <button mat-button [routerLink]="['/customers']">Back to List</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

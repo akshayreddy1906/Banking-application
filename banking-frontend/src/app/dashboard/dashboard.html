@@ -1,0 +1,63 @@
+<div class="dashboard-container">
+  <h1>Welcome to Your Banking Dashboard</h1>
+  <p>Select an option below to get started.</p>
+
+  <div class="dashboard-cards">
+    <mat-card class="dashboard-card" routerLink="/accounts">
+      <mat-card-header>
+        <mat-card-title>My Accounts</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>View your account details, balance, and transaction history.</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="dashboard-card" routerLink="/payments/transfer">
+      <mat-card-header>
+        <mat-card-title>Transfer Funds</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Move money between your accounts or to other users.</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="dashboard-card" routerLink="/payments/history">
+      <mat-card-header>
+        <mat-card-title>Payment History</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Review your past payments and transfers.</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="dashboard-card" routerLink="/customers/create">
+      <mat-card-header>
+        <mat-card-title>New Customer</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Open a new customer account.</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="admin-section" *ngIf="authService.hasRole('ADMIN')">
+    <h2>Admin Panel</h2>
+    <div class="dashboard-cards">
+      <mat-card class="dashboard-card" routerLink="/admin/customers">
+        <mat-card-header>
+          <mat-card-title>Manage Customers</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+      <mat-card class="dashboard-card" routerLink="/admin/accounts">
+        <mat-card-header>
+          <mat-card-title>Manage Accounts</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+      <mat-card class="dashboard-card" routerLink="/admin/audit">
+        <mat-card-header>
+          <mat-card-title>Audit Logs</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+</div>

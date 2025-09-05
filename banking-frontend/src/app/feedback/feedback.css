@@ -1,0 +1,13 @@
+.feedback-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+mat-card {
+  width: 600px;
+}
+
+mat-form-field {
+  width: 100%;
+}

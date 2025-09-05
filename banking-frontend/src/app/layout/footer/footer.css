@@ -1,0 +1,15 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.centered-text {
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,41 @@
+.account-detail-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+mat-card {
+  width: 600px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.error-message {
+  color: red;
+  margin: 1rem 0;
+}
+
+.success-message {
+  color: green;
+  margin: 1rem 0;
+}
+
+.transaction-form {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+hr {
+  margin: 1.5rem 0;
+}
+
+button {
+  margin-right: 1rem;
+}

@@ -1,0 +1,69 @@
+<div class="edit-customer-container">
+  <div *ngIf="isLoading" class="spinner-container">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+
+  <div *ngIf="errorMessage && !isLoading" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <mat-card *ngIf="!isLoading && !errorMessage">
+    <mat-card-header>
+      <mat-card-title>Edit Customer</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput formControlName="mobileNumber">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Age</mat-label>
+          <input matInput formControlName="age" type="number">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender">
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+            <mat-option value="Other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>PAN Card Number</mat-label>
+          <input matInput formControlName="panCardNumber">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Aadhaar Card Number (read-only)</mat-label>
+          <input matInput formControlName="aadhaarCardNumber">
+        </mat-form-field>
+
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="customerForm.invalid">Update</button>
+        <button mat-button [routerLink]="['/customers', customerId]">Cancel</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

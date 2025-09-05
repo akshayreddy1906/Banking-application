@@ -1,0 +1,70 @@
+<div class="admin-account-container">
+  <h1>All Accounts (Admin)</h1>
+
+  <div *ngIf="isLoading" class="spinner-container">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <table
+    mat-table
+    [dataSource]="accounts"
+    class="mat-elevation-z8"
+    *ngIf="!isLoading && accounts.length > 0"
+  >
+    <!-- Account Number Column -->
+    <ng-container matColumnDef="accountNumber">
+      <th mat-header-cell *matHeaderCellDef>Account No.</th>
+      <td mat-cell *matCellDef="let acc">{{ acc.accountNumber }}</td>
+    </ng-container>
+
+    <!-- Username Column -->
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef>Username</th>
+      <td mat-cell *matCellDef="let acc">{{ acc.username }}</td>
+    </ng-container>
+
+    <!-- PAN Column -->
+    <ng-container matColumnDef="panCardNumber">
+      <th mat-header-cell *matHeaderCellDef>PAN</th>
+      <td mat-cell *matCellDef="let acc">{{ acc.panCardNumber }}</td>
+    </ng-container>
+
+    <!-- Type Column -->
+    <ng-container matColumnDef="accountType">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let acc">{{ acc.accountType }}</td>
+    </ng-container>
+
+    <!-- Balance Column -->
+    <ng-container matColumnDef="balance">
+      <th mat-header-cell *matHeaderCellDef>Balance</th>
+      <td mat-cell *matCellDef="let acc">{{ acc.balance | currency : 'INR' }}</td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let acc">
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="deleteAccount(acc.accountNumber!)"
+          title="Delete Account"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <div *ngIf="!isLoading && accounts.length === 0">
+    <p>No accounts found.</p>
+  </div>
+</div>

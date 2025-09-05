@@ -1,0 +1,22 @@
+.create-account-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+mat-card {
+  width: 500px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  margin-right: 1rem;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 1rem;
+}
